@@ -1,0 +1,12 @@
+C:\Users\dysan\source\repos\Database\Database\bin\Debug\Database.dacpac
+C:\Users\dysan\source\repos\Database\Database\bin\Debug\Database.dll
+C:\Users\dysan\source\repos\Database\Database\bin\Debug\Database.pdb
+C:\Users\dysan\source\repos\Database\Database\obj\Debug\Database.sqlproj.AssemblyReference.cache
+C:\Users\dysan\source\repos\Database\Database\obj\Debug\Database.dll
+C:\Users\dysan\source\repos\Database\Database\obj\Debug\Database.pdb
+C:\Github\Database\Database\Database\bin\Debug\Database.dacpac
+C:\Github\Database\Database\Database\bin\Debug\Database.dll
+C:\Github\Database\Database\Database\bin\Debug\Database.pdb
+C:\Github\Database\Database\Database\obj\Debug\Database.sqlproj.AssemblyReference.cache
+C:\Github\Database\Database\Database\obj\Debug\Database.dll
+C:\Github\Database\Database\Database\obj\Debug\Database.pdb
