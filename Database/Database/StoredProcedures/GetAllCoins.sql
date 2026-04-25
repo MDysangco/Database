@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[GetAllCoins]
+AS BEGIN
+	SELECT * FROM Coins
+END 

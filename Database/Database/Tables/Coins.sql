@@ -6,5 +6,6 @@
 	[Address] NVARCHAR(255),
 	[ChainId] INT,
 	[Active] BIT,
+	[BinanceListingDate] BIGINT,
 	[CreateDate] DATETIME DEFAULT GETDATE()
 )
