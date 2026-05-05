@@ -1,78 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Github\\Database\\Database\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\Types\\Klines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\Types\\Klines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\StoredProcedures\\InsertKlines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\StoredProcedures\\InsertKlines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\StoredProcedures\\UpdateCoin.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\StoredProcedures\\UpdateCoin.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\StoredProcedures\\UpdateCoin.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\StoredProcedures\\UpdateCoin.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\Types\\Klines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\Types\\Klines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|C:\\Github\\Database\\Database\\Database\\StoredProcedures\\InsertKlines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{87DBBC11-65FC-4F03-813B-D7C5FF7841C5}|Database\\Database.sqlproj|solutionrelative:Database\\StoredProcedures\\InsertKlines.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 325,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Klines.sql ",
-              "DocumentMoniker": "C:\\Github\\Database\\Database\\Database\\Types\\Klines.sql",
-              "RelativeDocumentMoniker": "Database\\Types\\Klines.sql",
-              "ToolTip": "C:\\Github\\Database\\Database\\Database\\Types\\Klines.sql\r\n(localdb)\\Development.Candice\r\n(DESKTOP-IL5KU5A\\Martin)",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-23T18:45:51.909Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InsertKlines.sql ",
-              "DocumentMoniker": "C:\\Github\\Database\\Database\\Database\\StoredProcedures\\InsertKlines.sql",
-              "RelativeDocumentMoniker": "Database\\StoredProcedures\\InsertKlines.sql",
-              "ToolTip": "C:\\Github\\Database\\Database\\Database\\StoredProcedures\\InsertKlines.sql\r\n(localdb)\\Development.Candice\r\n(DESKTOP-IL5KU5A\\Martin)",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-23T18:45:43.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdateCoin.sql ",
-              "DocumentMoniker": "C:\\Github\\Database\\Database\\Database\\StoredProcedures\\UpdateCoin.sql",
-              "RelativeDocumentMoniker": "Database\\StoredProcedures\\UpdateCoin.sql",
-              "ToolTip": "C:\\Github\\Database\\Database\\Database\\StoredProcedures\\UpdateCoin.sql\r\n(localdb)\\Development.Candice\r\n(DESKTOP-IL5KU5A\\Martin)",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-23T17:56:55.831Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

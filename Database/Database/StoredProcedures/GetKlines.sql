@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[GetKlines]
-	@CoinId INT NULL,
-	@Interval INT NULL
+	@CoinId INT = NULL,
+	@Interval INT = NULL
 AS BEGIN
 
     SET NOCOUNT ON;

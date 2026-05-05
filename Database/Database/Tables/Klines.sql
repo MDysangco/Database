@@ -12,3 +12,5 @@
     [NumberOfTrades] INT NULL,
     [CreateDate] DateTime DEFAULT GETDATE()
 )
+
+
