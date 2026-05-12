@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[InsertRawReading]
+﻿CREATE PROCEDURE [dbo].[InsertReading]
     @TimestampUtc       DATETIME,
     @CoinId             INT,
     @PredictedClass     INT,

@@ -73,7 +73,7 @@
     <Build Include="StoredProcedures\GetActiveCoins.sql" />
     <Build Include="StoredProcedures\UpdateCoin.sql" />
     <Build Include="Tables\RawReading.sql" />
-    <Build Include="StoredProcedures\InsertRawReading.sql" />
+    <Build Include="StoredProcedures\InsertReading.sql" />
     <Build Include="Tables\Configurations.sql" />
     <Build Include="StoredProcedures\InsertConfiguration.sql" />
   </ItemGroup>

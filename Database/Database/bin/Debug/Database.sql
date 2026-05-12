@@ -40,49 +40,38 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Altering Procedure [dbo].[InsertConfiguration]...';
+PRINT N'Creating Procedure [dbo].[InsertReading]...';
 
 
 GO
-ALTER PROCEDURE [dbo].[InsertConfiguration]
-    @BuyProbabilityThreshold FLOAT,
-    @SellProbabilityThreshold FLOAT,
-    @TrendEMALength INT,
-    @VolFilterWindow INT,
-    @VolMinThreshold FLOAT,
-    @GlobalThreshold FLOAT,
-    @PerSymbolFloor FLOAT,
-    @Margin FLOAT,
-    @CooldownHours INT,
-    @NewId INT OUTPUT
+CREATE PROCEDURE [dbo].[InsertReading]
+    @TimestampUtc       DATETIME,
+    @CoinId             INT,
+    @PredictedClass     INT,
+    @ProbSell           FLOAT,
+    @ProbHold           FLOAT,
+    @ProbBuy            FLOAT,
+    @Price              FLOAT,
+    @EMA                FLOAT,
+    @Volatility         FLOAT,
+    @PassedProbFilter   BIT,
+    @PassedTrendFilter  BIT,
+    @PassedVolFilter    BIT,
+    @FinalSignal        NVARCHAR(10),
+    @ModelId            INT,
+    @ConfigRowId        INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO Configurations (
-        BuyProbabilityThreshold,
-        SellProbabilityThreshold,
-        TrendEMALength,
-        VolFilterWindow,
-        VolMinThreshold,
-        GlobalThreshold,
-        PerSymbolFloor,
-        Margin,
-        CooldownHours
+    INSERT INTO RawReading (
+        TimestampUtc, CoinId, PredictedClass, ProbSell, ProbHold, ProbBuy, Price, EMA, Volatility,
+        PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigRowId, SentToAzure
     )
-    VALUES (
-        @BuyProbabilityThreshold,
-        @SellProbabilityThreshold,
-        @TrendEMALength,
-        @VolFilterWindow,
-        @VolMinThreshold,
-        @GlobalThreshold,
-        @PerSymbolFloor,
-        @Margin,
-        @CooldownHours
+    VALUES ( 
+        @TimestampUtc, @CoinId, @PredictedClass, @ProbSell, @ProbHold, @ProbBuy, @Price, @EMA, @Volatility,
+        @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigRowId, 0
     );
-
-    SET @NewId = SCOPE_IDENTITY();
 END
 GO
 PRINT N'Update complete.';

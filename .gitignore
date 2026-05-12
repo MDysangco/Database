@@ -1,40 +1,28 @@
-# -----------------------------
-# SQL Server Database Project
-# -----------------------------
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.slnx
+*.v18/
 
 # Build output
 bin/
 obj/
-
-# DACPAC + build artifacts
-*.dacpac
 *.dll
 *.pdb
-*.cachefile
+*.exe
 
-# Auto-generated SQL build output
-*.sqlproj.FileListAbsolute.txt
-Model.xml
-refactor.xml
+# SQL Database Project
+*.dacpac
+*.sqlproj.user
+*.publish.xml
+*.refactorlog
 
-# Visual Studio user-specific
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# VS workspace
-.vs/
-
-# Document layout metadata
-DocumentLayout.json
-DocumentLayout.backup.json
-
-# MSBuild intermediates
-*.dbmdl
-*.jfm
-
-# Backup / temp
-*.tmp
-*.bak
+# Logs
 *.log
+
+# User-specific config
+launchSettings.json
+
+# Optional: local secrets
+appsettings.Development.json
