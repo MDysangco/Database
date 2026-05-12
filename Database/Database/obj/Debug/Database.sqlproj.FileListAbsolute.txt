@@ -10,7 +10,3 @@ C:\Github\Database\Database\Database\bin\Debug\Database.pdb
 C:\Github\Database\Database\Database\obj\Debug\Database.sqlproj.AssemblyReference.cache
 C:\Github\Database\Database\Database\obj\Debug\Database.dll
 C:\Github\Database\Database\Database\obj\Debug\Database.pdb
-C:\Github\Database\Database\Database\obj\Debug\Model.xml
-C:\Github\Database\Database\Database\obj\Debug\refactor.xml
-C:\Github\Database\Database\Database\obj\Debug\postdeploy.sql
-C:\Github\Database\Database\Database\obj\Debug\predeploy.sql

@@ -40,128 +40,39 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Dropping Procedure [dbo].[InsertKlines]...';
+PRINT N'Creating Procedure [dbo].[InsertReading]...';
 
 
 GO
-DROP PROCEDURE [dbo].[InsertKlines];
+CREATE PROCEDURE [dbo].[InsertReading]
+    @TimestampUtc       DATETIME,
+    @CoinId             INT,
+    @PredictedClass     INT,
+    @ProbSell           FLOAT,
+    @ProbHold           FLOAT,
+    @ProbBuy            FLOAT,
+    @Price              FLOAT,
+    @EMA                FLOAT,
+    @Volatility         FLOAT,
+    @PassedProbFilter   BIT,
+    @PassedTrendFilter  BIT,
+    @PassedVolFilter    BIT,
+    @FinalSignal        NVARCHAR(10),
+    @ModelId            INT,
+    @ConfigRowId        INT
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-
-GO
-PRINT N'Dropping User-Defined Table Type [dbo].[KlineType]...';
-
-
-GO
-DROP TYPE [dbo].[KlineType];
-
-
-GO
-PRINT N'Creating User-Defined Table Type [dbo].[KlineType]...';
-
-
-GO
-CREATE TYPE [dbo].[KlineType] AS TABLE (
-    [CoinId]         INT              NULL,
-    [Interval]       INT              NULL,
-    [KlineOpenTime]  BIGINT           NULL,
-    [OpenPrice]      DECIMAL (38, 18) NULL,
-    [HighPrice]      DECIMAL (38, 18) NULL,
-    [LowPrice]       DECIMAL (38, 18) NULL,
-    [ClosePrice]     DECIMAL (38, 18) NULL,
-    [Volume]         DECIMAL (38, 18) NULL,
-    [NumberOfTrades] INT              NULL);
-
-
-GO
-PRINT N'Altering Table [dbo].[Klines]...';
-
-
-GO
-ALTER TABLE [dbo].[Klines] ALTER COLUMN [ClosePrice] DECIMAL (38, 18) NULL;
-
-ALTER TABLE [dbo].[Klines] ALTER COLUMN [HighPrice] DECIMAL (38, 18) NULL;
-
-ALTER TABLE [dbo].[Klines] ALTER COLUMN [LowPrice] DECIMAL (38, 18) NULL;
-
-ALTER TABLE [dbo].[Klines] ALTER COLUMN [OpenPrice] DECIMAL (38, 18) NULL;
-
-ALTER TABLE [dbo].[Klines] ALTER COLUMN [Volume] DECIMAL (38, 18) NULL;
-
-
-GO
-PRINT N'Altering Procedure [dbo].[InsertKline]...';
-
-
-GO
-ALTER PROCEDURE [dbo].[InsertKline] 
-(
-	@CoinId INT,
-	@Interval INT,
-	@KlineOpenTime BIGINT,
-	@OpenPrice DECIMAL(38, 18),
-	@HighPrice DECIMAL(38, 18),
-	@LowPrice DECIMAL(38, 18),
-	@ClosePrice DECIMAL(38, 18),
-	@Volume DECIMAL(38, 18),
-	@NumberOfTrades INT
-)
-AS BEGIN
-
-	IF NOT EXISTS(SELECT 1 FROM Klines WHERE CoinId = @CoinId AND Interval = @Interval AND KlineOpenTime = @KlineOpenTime)
-	BEGIN
-
-		INSERT INTO Klines(CoinId, Interval, KlineOpenTime, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume, NumberOfTrades)
-		VALUES(@CoinId, @Interval, @KlineOpenTime, @OpenPrice, @HighPrice, @LowPrice, @ClosePrice, @Volume, @NumberOfTrades)
-	END
-
+    INSERT INTO RawReading (
+        TimestampUtc, CoinId, PredictedClass, ProbSell, ProbHold, ProbBuy, Price, EMA, Volatility,
+        PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigRowId, SentToAzure
+    )
+    VALUES ( 
+        @TimestampUtc, @CoinId, @PredictedClass, @ProbSell, @ProbHold, @ProbBuy, @Price, @EMA, @Volatility,
+        @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigRowId, 0
+    );
 END
-GO
-PRINT N'Creating Procedure [dbo].[InsertKlines]...';
-
-
-GO
-CREATE PROCEDURE [dbo].[InsertKlines]
-	@Klines KlineType READONLY
-
-AS BEGIN
-	
-	INSERT INTO Klines(CoinId, Interval, KlineOpenTime, OpenPrice, HighPrice, LowPrice, ClosePrice, Volume, NumberOfTrades)
-	SELECT kl.CoinId, kl.Interval, kl.KlineOpenTime, kl.OpenPrice, kl.HighPrice, kl.LowPrice, kl.ClosePrice, kl.Volume, kl.NumberOfTrades 
-	FROM @Klines kl WHERE NOT EXISTS (SELECT 1 FROM Klines WHERE CoinId = kl.CoinId AND Interval = kl.Interval AND KlineOpenTime = kl.KlineOpenTime)
-
-END
-GO
-PRINT N'Refreshing Procedure [dbo].[DeleteKlinesByDateRange]...';
-
-
-GO
-EXECUTE sp_refreshsqlmodule N'[dbo].[DeleteKlinesByDateRange]';
-
-
-GO
-PRINT N'Refreshing Procedure [dbo].[GetEarliestRecordedKline]...';
-
-
-GO
-EXECUTE sp_refreshsqlmodule N'[dbo].[GetEarliestRecordedKline]';
-
-
-GO
-PRINT N'Refreshing Procedure [dbo].[GetKlines]...';
-
-
-GO
-EXECUTE sp_refreshsqlmodule N'[dbo].[GetKlines]';
-
-
-GO
-PRINT N'Refreshing Procedure [dbo].[GetLatestRecordedKline]...';
-
-
-GO
-EXECUTE sp_refreshsqlmodule N'[dbo].[GetLatestRecordedKline]';
-
-
 GO
 PRINT N'Update complete.';
 

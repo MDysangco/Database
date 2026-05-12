@@ -1,94 +1,28 @@
-###############################
-# SQL Server Database Project #
-###############################
-
-# SQLProj build outputs
-*.dacpac
-*.bacpac
-*.sqlproj.FileListAbsolute.txt
-Model.xml
-refactor.xml
-
-# SSDT metadata
-*.dbmdl
-*.jfm
-
-# Auto-generated SQL build output
-# (keeps your hand-written SQL in StoredProcedures/Tables/Types)
-bin/**/*.sql
-obj/**/*.sql
-
-##########################
-# Build Output (General) #
-##########################
-
-# Build directories
-bin/
-obj/
-
-# Debug symbols
-*.pdb
-
-# Compiled assemblies (if any)
-*.dll
-*.exe
-
-###########################
-# Visual Studio Artifacts #
-###########################
-
-# VS workspace
+# Visual Studio
 .vs/
-
-# User-specific VS settings
 *.suo
 *.user
-*.userosscache
-*.sln.docstates
+*.slnx
+*.v18/
 
-# VS window/layout metadata
-*.ide.*
-*.metadata.v10.bin
-*.db
-*.db-shm
-*.db-wal
-DocumentLayout.json
-DocumentLayout.backup.json
+# Build output
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
 
-# IIS Express (if ever generated)
-applicationhost.config
+# SQL Database Project
+*.dacpac
+*.sqlproj.user
+*.publish.xml
+*.refactorlog
 
-#########################
-# Visual Studio Code    #
-#########################
-
-# VS Code settings (optional)
-.vscode/
-
-#########################
-# NuGet Packages        #
-#########################
-
-*.nupkg
-*.snupkg
-packages/
-
-#########################
-# Logs                  #
-#########################
-
+# Logs
 *.log
 
-#########################
-# OS-specific clutter   #
-#########################
+# User-specific config
+launchSettings.json
 
-# Windows
-Thumbs.db
-Desktop.ini
-
-# macOS
-.DS_Store
-
-# Linux
-*~
+# Optional: local secrets
+appsettings.Development.json

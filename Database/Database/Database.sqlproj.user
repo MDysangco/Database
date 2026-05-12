@@ -3,7 +3,7 @@
   <PropertyGroup>
     <StartupScript>(Blank)</StartupScript>
     <StartAction>StartNone</StartAction>
-    <TargetConnectionString>Data Source=(localdb)\Development;Initial Catalog=Candice;Integrated Security=True;Persist Security Info=False;Pooling=False;Multiple Active Result Sets=False;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Command Timeout=0</TargetConnectionString>
+    <TargetConnectionString>Data Source=(localdb)\Development;Initial Catalog=Candice;Integrated Security=True;Persist Security Info=False;Pooling=False;Multiple Active Result Sets=False;Encrypt=True;Trust Server Certificate=False;Command Timeout=0</TargetConnectionString>
     <TargetDatabase>Candice</TargetDatabase>
     <CreateNewDatabase>False</CreateNewDatabase>
   </PropertyGroup>
