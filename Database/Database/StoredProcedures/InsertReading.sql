@@ -18,12 +18,16 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO RawReading (
-        TimestampUtc, CoinId, PredictedClass, ProbSell, ProbHold, ProbBuy, Price, EMA, Volatility,
-        PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigRowId, SentToAzure
-    )
-    VALUES ( 
-        @TimestampUtc, @CoinId, @PredictedClass, @ProbSell, @ProbHold, @ProbBuy, @Price, @EMA, @Volatility,
-        @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigRowId, 0
-    );
+    IF NOT EXISTS (SELECT 1 FROM RawReading WHERE TimestampUtc = @TimestampUtc AND CoinId = @CoinId AND ModelId = @ModelId)
+    BEGIN
+        INSERT INTO RawReading (
+            TimestampUtc, CoinId, PredictedClass, ProbSell, ProbHold, ProbBuy, Price, EMA, Volatility,
+            PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigRowId, SentToAzure
+        )
+        VALUES ( 
+            @TimestampUtc, @CoinId, @PredictedClass, @ProbSell, @ProbHold, @ProbBuy, @Price, @EMA, @Volatility,
+            @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigRowId, 0
+        );
+    END
+
 END
