@@ -13,7 +13,7 @@
     @PassedVolFilter    BIT,
     @FinalSignal        NVARCHAR(10),
     @ModelId            INT,
-    @ConfigRowId        INT
+    @ConfigUniqueId     NVARCHAR(50)
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -22,11 +22,11 @@ BEGIN
     BEGIN
         INSERT INTO RawReading (
             TimestampUtc, CoinId, PredictedClass, ProbSell, ProbHold, ProbBuy, Price, EMA, Volatility,
-            PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigRowId, SentToAzure
+            PassedProbFilter, PassedTrendFilter, PassedVolFilter, FinalSignal, ModelId, ConfigUniqueId, SentToAzure
         )
         VALUES ( 
             @TimestampUtc, @CoinId, @PredictedClass, @ProbSell, @ProbHold, @ProbBuy, @Price, @EMA, @Volatility,
-            @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigRowId, 0
+            @PassedProbFilter, @PassedTrendFilter, @PassedVolFilter, @FinalSignal, @ModelId, @ConfigUniqueId, 0
         );
     END
 

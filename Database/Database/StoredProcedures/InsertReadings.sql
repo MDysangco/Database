@@ -19,7 +19,7 @@ BEGIN
         PassedVolFilter,
         FinalSignal,
         ModelId,
-        ConfigRowId,
+        ConfigUniqueId,
         SentToAzure
     )
     SELECT 
@@ -37,7 +37,7 @@ BEGIN
         r.PassedVolFilter,
         r.FinalSignal,
         r.ModelId,
-        r.ConfigRowId,
+        r.ConfigUniqueId,
         r.SentToAzure
     FROM @Readings r
     WHERE NOT EXISTS (
