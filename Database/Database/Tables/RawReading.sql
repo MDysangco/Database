@@ -14,7 +14,7 @@
     PassedVolFilter BIT NOT NULL,
     FinalSignal NVARCHAR(10) NOT NULL,         
     ModelId INT NOT NULL,        
-    ConfigRowId INT NOT NULL,   
+    ConfigUniqueId NVARCHAR(50) NOT NULL,   
     SentToAzure BIT NOT NULL DEFAULT 0,
     AzureResponse NVARCHAR(MAX) NULL,
     AzureTimestampUtc BIGINT NULL,
