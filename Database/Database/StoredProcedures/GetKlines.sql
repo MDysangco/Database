@@ -1,9 +1,13 @@
-﻿CREATE PROCEDURE [dbo].[GetKlines]
+CREATE PROCEDURE [dbo].[GetKlines]
 	@CoinId INT,
 	@Interval INT
 AS BEGIN
 
-    SET NOCOUNT ON;
+	SET NOCOUNT ON;
 
-    SELECT * FROM Klines WHERE CoinId = @CoinId AND Interval = @Interval ORDER BY KlineOpenTime;
+	SELECT *
+	FROM Klines
+	WHERE CoinId = @CoinId AND Interval = @Interval
+	ORDER BY KlineOpenTime;
+
 END

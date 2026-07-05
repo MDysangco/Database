@@ -1,0 +1,9 @@
+CREATE PROCEDURE [dbo].[GetCoin]
+	@CoinId INT
+AS BEGIN
+
+	SET NOCOUNT ON;
+
+	SELECT * FROM Coins WHERE Id = @CoinId;
+
+END
